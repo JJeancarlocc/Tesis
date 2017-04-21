@@ -1,0 +1,58 @@
+\documentclass[11pt,twoside,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[margin=3cm]{geometry}
+\usepackage{url, graphicx}
+\graphicspath{{Figuras/}}
+
+\usepackage[font=small,skip=1ex]{caption}
+
+\usepackage{multirow}	% Tablas con múltiples columnas y filas
+\usepackage{gensymb}	% Permite el uso de simbolos como °
+\usepackage{enumitem}	% Permite cambiar el tipo de viñetas de números, alfabeto o romanos
+
+\raggedbottom		% Este comando sirve para que el documento no necesariamente llene toda la pagina
+
+\usepackage{helvet}					%Helvet es un tipo de fuente muy parecido al arial
+\renewcommand{\familydefault}{\sfdefault}		%Y se deben usar estos dos comandos para que sea el tipo de fuente por defecto en todo el texto
+
+\setlength{\parindent}{0pt}			% No va haber sangrado o espacio al empezar un nuevo párrafo
+\setlength{\parskip}{1em}				% Espacio entre párrafos [1em = 11pt]
+\renewcommand{\baselinestretch}{1.5}	% Espacio entre líneas de 1.5
+
+\usepackage[notlot,notlof,nottoc,notindex]{tocbibind}	%Introduce la bibliografía en el indice general
+\usepackage{titlesec}
+\titleformat{\chapter}[display]   
+{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}   
+\titlespacing*{\chapter}{0pt}{-50pt}{40pt}
+
+\usepackage{multirow, tabularx}						% para las tablas
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}m{#1}}
+\renewcommand\tabularxcolumn[1]{m{#1}}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+
+\usepackage{booktabs}		%Se puede agregar una viñeta de enumeración
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+
+\usepackage{changepage}	%Para mover figuras o cuadros hacia el margen izquierdo
+\usepackage[range-phrase = \,--\,]{siunitx}	% Para las unidades del sistema internacional
+
+\begin{document}
+\pagenumbering{gobble}		% Comando para que no aparezca la numeración de la página en la carátula
+\input{caratula}			% Introducción del archivo caratula.tex
+\tableofcontents
+\pagebreak
+\pagenumbering{arabic}
+\input{introduccion}		% Introducción del archivo introduccion.tex
+\input{capitulo1}			% Introducción del archivo capitulo1.tex
+\input{capitulo2}			% Introducción del archivo capitulo2.tex
+\input{capitulo3}			% Introducción del archivo capitulo3.tex
+\input{capitulo4}			% Introducción del archivo capitulo4.tex
+\input{Conclusiones}		% Introducción del archivo conclusiones.tex
+\input{Recomendaciones}		% Introducción del archivo recomendaciones.tex
+
+\bibliographystyle{ieeetr}
+\bibliography{tesisref}
+
+\end{document}
